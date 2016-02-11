@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+  <style type="text/css">
+
+  body { 
+    margin:0; 
+    padding: 0;
+  }
+
+  #map1 { 
+    position:absolute; 
+    width:50%;
+    height:50%;
+  }
+
+  #map2 { 
+    position:absolute; 
+    width:50%;
+    height:50%;
+    left: 50%;
+  }
+
+  #map3 { 
+    position:absolute; 
+    bottom:0; 
+    width:50%;
+    height:50%;
+  }
+
+  #map4 { 
+    position:absolute; 
+    bottom:0; 
+    width:50%;
+    height:50%;
+    left: 50%;
+  }
+
+  </style>
+
+  <title>Places I've Lived</title>
+
+  <!-- Link to Leaflet JS libraryeaflet -->
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+</head>
+
+<body>
+  <div id="map1"></div>
+  <div id="map2"></div>
+  <div id="map3"></div>
+  <div id="map4"></div>
+
+
+  <script>
+
+  //MAP 1 - christopher street, ny
+  var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+  });
+  
+   var map1 = L.map('map1', {
+
+    scrollWheelZoom: false,
+    center: [40.733950, -74.001811],
+    zoom: 13
+  });
+
+  map1.addLayer(layer);
+
+  var popup1 = L.popup()
+    .setLatLng([40.733950, -74.001811])
+    .setContent("Christopher Street, New York, NY")
+    .openOn(map1);
+
+  //MAP 2 - sacramento street, cambridge
+  var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+  });
+
+   var map2 = L.map('map2', {
+
+    scrollWheelZoom: false,
+    center: [42.382785, -71.119107],
+    zoom: 13
+  });
+
+  map2.addLayer(layer);
+
+  var popup2 = L.popup()
+    .setLatLng([42.382785, -71.119107])
+    .setContent("Sacramento Street, Cambrige, MA")
+    .openOn(map2);
+
+
+  //MAP 3 - berlin
+  var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+  });
+
+   var map3 = L.map('map3', {
+
+    scrollWheelZoom: false,
+    center: [52.504180, 13.421347],
+    zoom: 13
+  });
+
+  map3.addLayer(layer);
+
+  var popup3 = L.popup()
+    .setLatLng([52.504180, 13.421347])
+    .setContent("Adalbertstrasse, Berlin, Germany")
+    .openOn(map3);
+
+  //MAP 4 - berry street
+  var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+  });
+
+  var map4 = L.map('map4', {
+
+    scrollWheelZoom: false,
+    center: [40.718460, -73.959452],
+    zoom: 13
+  });
+
+  map4.addLayer(layer);
+
+  var popup4 = L.popup()
+    .setLatLng([40.718460, -73.959452])
+    .setContent("Berry Street, Brooklyn, NY")
+    .openOn(map4);
+
+
+  </script>
+
+</body>
+</html>
